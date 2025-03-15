@@ -5,7 +5,9 @@ import request from "graphql-request";
 import { useAccount } from "wagmi";
 
 interface SwapResponse {
-  swaps: Swaps[];
+  swaps: {
+    items: Swaps[];
+  }
 }
 
 export const useSwaps = () => {
@@ -25,7 +27,7 @@ export const useSwaps = () => {
   })
 
   return {
-    sData: data?.swaps || [],
+    sData: data?.swaps.items || [],
     sLoading: isLoading,
     sError: error,
     sRefetch: refetch,

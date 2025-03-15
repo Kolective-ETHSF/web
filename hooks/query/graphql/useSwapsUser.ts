@@ -6,7 +6,9 @@ import { useAccount } from "wagmi";
 import { useAddressAI } from "../useAddressAI";
 
 interface SwapResponse {
-  swaps: Swaps[];
+  swaps: {
+    items: Swaps[];
+  }
 }
 
 export const useSwapsUser = ({
@@ -29,7 +31,7 @@ export const useSwapsUser = ({
         );
       }
 
-      return { swaps: [] };
+      return { swaps: { items: [] } };
     },
     enabled: !!uA,
     refetchInterval: 10000,
@@ -37,7 +39,7 @@ export const useSwapsUser = ({
   })
 
   return {
-    suData: data?.swaps || [],
+    suData: data?.swaps.items || [],
     suLoading: isLoading,
     suError: error,
     suRefetch: refetch,

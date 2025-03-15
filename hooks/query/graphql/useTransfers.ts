@@ -5,7 +5,9 @@ import request from "graphql-request";
 import { useAccount } from "wagmi";
 
 interface TranferResponse {
-  transfers: Transfers[];
+  transfers: {
+    items: Transfers[];
+  }
 }
 
 export const useTransfers = () => {
@@ -25,7 +27,7 @@ export const useTransfers = () => {
   })
 
   return {
-    tData: data?.transfers || [],
+    tData: data?.transfers.items || [],
     tLoading: isLoading,
     tError: error,
     tRefetch: refetch,

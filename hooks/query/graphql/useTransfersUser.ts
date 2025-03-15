@@ -6,7 +6,9 @@ import { useAccount } from "wagmi";
 import { useAddressAI } from "../useAddressAI";
 
 interface TranferResponse {
-  transfers: Transfers[];
+  transfers: {
+    items: Transfers[];
+  }
 };
 
 export const useTransfersUser = ({
@@ -29,7 +31,7 @@ export const useTransfersUser = ({
         );
       }
 
-      return { transfers: [] };
+      return { transfers: { items: [] } };
     },
     enabled: !!uA,
     refetchInterval: 10000,
@@ -37,7 +39,7 @@ export const useTransfersUser = ({
   })
 
   return {
-    tuData: data?.transfers || [],
+    tuData: data?.transfers.items || [],
     tuLoading: isLoading,
     tuError: error,
     tuRefetch: refetch,
