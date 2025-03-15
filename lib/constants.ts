@@ -1,0 +1,2 @@
+export const ADDRESS_CORE = "0x0b2a6A4404332D720Ac09C96701976fd1df32CDa" as HexAddress;
+export const DECIMALS_TOKEN = 18;
