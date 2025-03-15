@@ -3,7 +3,7 @@
 Kolective is a cutting-edge Web3 platform that combines AI-driven insights with social investing, enabling users to make informed trading decisions effortlessly. The platform offers AI-powered risk profiling, Key Opinion Leader (KOL) recommendations, automated trading, and token management features.
 
 ## 🌐 Live Demo
-[Kolective Website](https://kolective.vercel.app)
+[Kolective Website](https://kolective-ethsf.vercel.app)
 
 ---
 
@@ -45,8 +45,8 @@ Kolective is a cutting-edge Web3 platform that combines AI-driven insights with 
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/Kolective/kolective-web
-cd kolective-web
+git clone https://github.com/Kolective-ETHSF/web
+cd web
 ```
 
 ### 2️⃣ Install dependencies
